@@ -2,11 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import { Content } from './components/Content'
 import { Counter } from './components/Counter'
-// import { Header } from './components/Header'
-// import { List } from './components/List'
+import { Header } from './components/Header'
+import { List } from './components/List'
 import { ClassBox } from './components/ClassBox'
-import { Input } from './components/Input'
-import { CheckList } from './components/CheckList'
 
 function App() {
   const [contador, setContador] = useState(0);
@@ -20,13 +18,10 @@ function App() {
         <Content contador={contador} />
         <Counter contador={contador} setContador={setContador} />
       </ClassBox>
-      {/* <ClassBox data={3}>
-        <Header title={title} />
-        <List todos={todos} setTodos={setTodos} />
-      </ClassBox> */}
+
       <ClassBox data={3.1}>
-        <Input title={title} todos={todos} setTodos={setTodos} />
-        <CheckList todos={todos} />
+        <Header title={title} todos={todos} setTodos={setTodos} />
+        <List todos={todos} />
       </ClassBox>
     </div>
   )
