@@ -5,6 +5,7 @@ import { Counter } from './components/Counter'
 import { Header } from './components/Header'
 import { List } from './components/List'
 import { ClassBox } from './components/ClassBox'
+import { Input } from './components/Input'
 
 function App() {
   const [contador, setContador] = useState(0);
@@ -20,7 +21,8 @@ function App() {
       </ClassBox>
 
       <ClassBox data={3.1}>
-        <Header title={title} todos={todos} setTodos={setTodos} />
+        <Header title={title} />
+        <Input todos={todos} setTodos={setTodos} />
         <List todos={todos} />
       </ClassBox>
     </div>

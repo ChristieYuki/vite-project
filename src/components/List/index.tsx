@@ -1,16 +1,18 @@
 interface ListProps {
-    todos: string[]
+	todos: string[]
 }
 
 export function List({ todos }: ListProps) {
 
-    return (
-        <>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-                {todos.map((todo) => {
-                    return (<span>{todo}</span>)
-                })}
-            </div>
-        </>
-    )
+	return (
+		<>
+			<div>
+				{
+					todos.length === 0 ? <h3>Vamos fazer algo hoje?</h3> :
+						todos.map((todo) => {
+							return (<span>{todo}</span>)
+						})}
+			</div>
+		</>
+	)
 }
