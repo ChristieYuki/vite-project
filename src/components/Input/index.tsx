@@ -29,6 +29,7 @@ export function Input({ todos, setTodos }: InputProps) {
         type="text"
         onChange={handleTodoInput}
         onBlur={handleAddTodo}
+        value={todoInput}
       />
       <button onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
         +
