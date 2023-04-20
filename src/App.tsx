@@ -1,48 +1,75 @@
-import { ChangeEvent, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
 import { Content } from './components/Content'
 import { Counter } from './components/Counter'
+import { Header } from './components/Header'
+import { Input } from './components/Input'
+import { List } from './components/List'
+import { ConnectCat } from './components/ConnectCat'
+
+export type Todo = {
+  description: string
+  id: string
+  createdAt: string
+  isChecked: boolean
+}
 
 function App() {
-  const [contador, setContador] = useState(0);
-  // const initialTodo = ["Ir na farmácia", "Fazer compras", "Apresentar o gatin"]
-  //  const [todos, setTodos] = useState<string[]>(initialTodo);
-  const [todos, setTodos] = useState<string[]>([]);
-  const [todoInput, setTodoInput] = useState("");
-  function handleTodoInput(event: ChangeEvent<HTMLInputElement>) {
-    setTodoInput(event.target.value);
-    console.log(event.target.value);
-  }
+  const [contador, setContador] = useState(0)
 
-  function handleAddTodo() {
-    setTodos([...todos, todoInput])
-    setTodoInput("");
-  }
-  // chamamos esse codigo que lembra html de Jsx
+  const [todos, setTodos] = useState<Todo[]>([])
+
+  const [catContador, setCatContador] = useState(0)
+  const [catImage, setCatImage] = useState({})
+
   return (
     <div>
-      <div style={{ display: "flex", border: "solid", padding: "30px", flexDirection: "column" }}>
+      <div
+        style={{
+          display: 'flex',
+          margin: '10px',
+          border: 'solid',
+          padding: '30px',
+          flexDirection: 'column',
+        }}
+      >
         <Content contador={contador} />
         <Counter contador={contador} setContador={setContador} />
       </div>
-      <div style={{ display: "flex", margin: "10px", border: "solid", padding: "30px", flexDirection: "column" }}>
-        <div style={{ marginBottom: "24px" }}>
-          <h2>My to do</h2>
-          <input alt='onChange' type="text" onChange={handleTodoInput} onBlur={handleAddTodo} />
-          <button onSubmit={handleAddTodo}>+</button>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {todos.map((todo) => {
-            return (<span>{todo}</span>)
-          })}
-        </div>
+
+      <div
+        style={{
+          display: 'flex',
+          margin: '10px',
+          border: 'solid',
+          padding: '30px',
+          flexDirection: 'column',
+        }}
+      >
+        <Header title={'Cat API'} />
+        <ConnectCat
+          catContador={catContador}
+          setCatContador={setCatContador}
+          catImage={catImage}
+          setCatImage={setCatImage}
+        />
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          margin: '10px',
+          border: 'solid',
+          padding: '30px',
+          flexDirection: 'column',
+        }}
+      >
+        <Header title={'My to do List'} />
+        <Input todos={todos} setTodos={setTodos} />
+        <List todos={todos} setTodos={setTodos} />
       </div>
     </div>
   )
 }
-//lista hard coded = dado mockado
-
 
 export default App
