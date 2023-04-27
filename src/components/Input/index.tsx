@@ -18,8 +18,14 @@ export function Input({ todos, setTodos }: InputProps) {
       createdAt: new Date().toDateString(),
       isChecked: false,
     }
-    setTodos([...todos, newTodo])
-    setTodoInput('')
+    if(todoInput.trim() !== ""){
+      setTodos([...todos, newTodo])
+      setTodoInput('')
+    }else{
+      setTodoInput('')
+      alert('Escreva algo, arrombado!')
+      return true
+    }
   }
 
   return (
@@ -29,6 +35,7 @@ export function Input({ todos, setTodos }: InputProps) {
         type="text"
         onChange={handleTodoInput}
         onBlur={handleAddTodo}
+        value={todoInput}
       />
       <button onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
         +

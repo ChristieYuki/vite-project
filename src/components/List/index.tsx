@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import { Todo } from '../../App'
 
 interface ListProps {
@@ -12,6 +12,19 @@ export function List({ todos, setTodos }: ListProps) {
     })
     setTodos(newTodo)
     console.log('check')
+  }
+  function handleCheckbox(id: string){
+    const newTodo = todos.map(todo => {
+      if (todo.id === id){
+        return(
+          {...todo, isChecked: !todo.isChecked}
+        )
+    }
+    {
+      return(todo)
+    }
+    })
+    setTodos(newTodo)
   }
 
   return (
@@ -29,7 +42,7 @@ export function List({ todos, setTodos }: ListProps) {
                 alignItems: 'center',
               }}
             >
-              <input type="checkbox" checked={todo.isChecked} />
+              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>
