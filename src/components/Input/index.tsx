@@ -18,8 +18,14 @@ export function Input({ todos, setTodos }: InputProps) {
       createdAt: new Date().toDateString(),
       isChecked: false,
     }
-    setTodos([...todos, newTodo])
-    setTodoInput('')
+    if(todoInput.trim() !== ""){
+      setTodos([...todos, newTodo])
+      setTodoInput('')
+    }else{
+      setTodoInput('')
+      alert('Escreva algo, arrombado!')
+      return true
+    }
   }
 
   return (

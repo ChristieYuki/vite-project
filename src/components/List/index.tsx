@@ -13,16 +13,16 @@ export function List({ todos, setTodos }: ListProps) {
     setTodos(newTodo)
     console.log('check')
   }
-  function handleCheckBox(id: string) {
+  function handleCheckbox(id: string){
     const newTodo = todos.map(todo => {
-      if (todo.id === id) {
-        return (
-          { ...todo, isChecked: !todo.isChecked }
+      if (todo.id === id){
+        return(
+          {...todo, isChecked: !todo.isChecked}
         )
-      }
-      {
-        return (todo)
-      }
+    }
+    {
+      return(todo)
+    }
     })
     setTodos(newTodo)
   }
@@ -42,7 +42,7 @@ export function List({ todos, setTodos }: ListProps) {
                 alignItems: 'center',
               }}
             >
-              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckBox(todo.id)} value={todo.id} />
+              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>
