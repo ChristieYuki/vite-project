@@ -34,10 +34,9 @@ export function Input({ todos, setTodos }: InputProps) {
         alt="onChange"
         type="text"
         onChange={handleTodoInput}
-        onBlur={handleAddTodo}
         value={todoInput}
       />
-      <button onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
+      <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
         +
       </button>
     </>
