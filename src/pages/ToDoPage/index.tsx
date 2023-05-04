@@ -3,20 +3,15 @@ import { Todo } from "../../App";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { List } from "../../components/List";
+import { ToDoContextProvider } from "../../context/toDoContext";
 
-interface ToDoPageProps {
-    todos: Todo[],
-    setTodosInput: (todos: Todo[]) => void,
-    setTodosList: Dispatch<SetStateAction<Todo[]>>
-}
-
-export function ToDoPage({ todos, setTodosInput, setTodosList }:ToDoPageProps) {
+export function ToDoPage() {
 
     return (
-        <>
+        <ToDoContextProvider>
             <Header title={'My to do List'} />
-            <Input todos={todos} setTodos={setTodosInput} />
-            <List todos={todos} setTodos={setTodosList} />
-        </>
+            <Input />
+            <List />
+        </ToDoContextProvider>
     )
 }

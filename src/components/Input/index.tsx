@@ -1,16 +1,17 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
+import { ToDoContext } from '../../context/toDoContext'
 
-interface InputProps {
-  todos: Todo[]
-  setTodos: (todos: Todo[]) => void
-}
-export function Input({ todos, setTodos }: InputProps) {
+export function Input() {
+  const {todos, setTodos} = useContext(ToDoContext)
+
   const [todoInput, setTodoInput] = useState('')
+
   function handleTodoInput(event: ChangeEvent<HTMLInputElement>) {
     setTodoInput(event.target.value)
     console.log(event.target.value)
   }
+  
   function handleAddTodo() {
     const newTodo: Todo = {
       description: todoInput,

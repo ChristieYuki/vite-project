@@ -10,8 +10,6 @@ import { ToDoPage } from "./pages/ToDoPage"
 export function Router() {
 const [contador, setContador] = useState(0)
 
-const [todos, setTodos] = useState<Todo[]>([])
-
 const [catContador, setCatContador] = useState(0)
 const [catImage, setCatImage] = useState({})
 
@@ -20,7 +18,7 @@ const [catImage, setCatImage] = useState({})
             <Route path="/" element={ <Home/> }/>
             <Route path="/connect-cat" element={ <ConnectCatPage catContador={catContador} catImage={catImage} setCatContador={setCatContador} setCatImage={setCatImage}/> }/>
             <Route path="/contador" element={ <CounterPage contador={contador} setContador={setContador}/> }/>
-            <Route path="/to-do" element={ <ToDoPage todos={todos} setTodosInput={setTodos} setTodosList={setTodos} /> } />
+            <Route path="/to-do" element={ <ToDoPage /> } />
         </Routes>
     )
     }
