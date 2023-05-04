@@ -1,13 +1,7 @@
-import { useState } from 'react'
 import './App.css'
-import { Content } from './components/Content'
-import { Counter } from './components/Counter'
-import { Header } from './components/Header'
-import { Input } from './components/Input'
-import { List } from './components/List'
-import { ConnectCat } from './components/ConnectCat'
 import { BrowserRouter} from 'react-router-dom'
 import { Router } from './Router'
+import { ToDoContextProvider } from './context/toDoContext'
 
 export type Todo = {
   description: string
