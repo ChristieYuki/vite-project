@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { ToDoContext } from '../../context/toDoContext'
+import { ToDoContext } from '../../context/ToDoContext'
 
 export function List() {
 
-  const {todos, setTodos} = useContext(ToDoContext)
+  const { todos, setTodos } = useContext(ToDoContext)
   const handleDelete2 = (id: string) => {
     const newTodo = todos.filter((todo) => {
       return todo.id !== id
@@ -11,16 +11,16 @@ export function List() {
     setTodos(newTodo)
     console.log('check')
   }
-  function handleCheckbox(id: string){
+  function handleCheckbox(id: string) {
     const newTodo = todos.map(todo => {
-      if (todo.id === id){
-        return(
-          {...todo, isChecked: !todo.isChecked}
+      if (todo.id === id) {
+        return (
+          { ...todo, isChecked: !todo.isChecked }
         )
-    }
-    {
-      return(todo)
-    }
+      }
+      {
+        return (todo)
+      }
     })
     setTodos(newTodo)
   }
@@ -40,7 +40,7 @@ export function List() {
                 alignItems: 'center',
               }}
             >
-              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
+              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>

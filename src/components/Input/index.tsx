@@ -1,9 +1,9 @@
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
-import { ToDoContext } from '../../context/toDoContext'
+import { ToDoContext } from '../../context/ToDoContext'
 
 export function Input() {
-  const {todos, setTodos} = useContext(ToDoContext)
+  const { todos, setTodos } = useContext(ToDoContext)
 
   const [todoInput, setTodoInput] = useState('')
 
@@ -11,7 +11,7 @@ export function Input() {
     setTodoInput(event.target.value)
     console.log(event.target.value)
   }
-  
+
   function handleAddTodo() {
     const newTodo: Todo = {
       description: todoInput,
@@ -19,10 +19,10 @@ export function Input() {
       createdAt: new Date().toDateString(),
       isChecked: false,
     }
-    if(todoInput.trim() !== ""){
+    if (todoInput.trim() !== "") {
       setTodos([...todos, newTodo])
       setTodoInput('')
-    }else{
+    } else {
       setTodoInput('')
       alert('Escreva algo, arrombado!')
       return true

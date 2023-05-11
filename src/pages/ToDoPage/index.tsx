@@ -1,9 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
-import { Todo } from "../../App";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { List } from "../../components/List";
-import { ToDoContextProvider } from "../../context/toDoContext";
+import { ToDoContextProvider } from "../../context/ToDoContext";
 
 export function ToDoPage() {
 
