@@ -1,11 +1,9 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
-import { Todo } from '../../App'
+import { useContext } from 'react'
+import { ToDoContext } from '../../context/toDoContext'
 
-interface ListProps {
-  todos: Todo[]
-  setTodos: Dispatch<SetStateAction<Todo[]>>
-}
-export function List({ todos, setTodos }: ListProps) {
+export function List() {
+
+  const {todos, setTodos} = useContext(ToDoContext)
   const handleDelete2 = (id: string) => {
     const newTodo = todos.filter((todo) => {
       return todo.id !== id
