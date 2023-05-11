@@ -1,18 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from "react"
+import { ConnectCatContext } from "../../context/ConnectCatContext"
 
-interface CatProps {
-  catContador: number
-  setCatContador: (catContador: number) => void
-  catImage: object
-  setCatImage: (catImage: object) => void
-}
+export function ConnectCat() {
+  const { catContador, setCatContador, catImage, setCatImage } = useContext(ConnectCatContext)
 
-export function ConnectCat({
-  catContador,
-  setCatContador,
-  catImage,
-  setCatImage,
-}: CatProps) {
   useEffect(() => {
     const fetchCatImage = async () => {
       const response = await fetch('https://api.thecatapi.com/v1/images/search')

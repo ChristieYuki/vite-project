@@ -1,18 +1,13 @@
 import { Content } from '../../components/Content';
 import { Counter } from '../../components/Counter';
+import { CounterContextProvider } from '../../context/CounterContext';
 
-interface CounterPageProps {
-    contador: number,
-    setContador: (contador: number) => void
-}
-
-export function CounterPage(
-    { contador, setContador }: CounterPageProps) {
+export function CounterPage() {
 
     return (
-        <>
-            <Content contador={contador} />
-            <Counter contador={contador} setContador={setContador} />
-        </>
+        <CounterContextProvider>
+            <Content />
+            <Counter />
+        </CounterContextProvider>
     )
 }
