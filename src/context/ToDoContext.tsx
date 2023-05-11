@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 import { Todo } from '../App'
 
-const inicialToDo:Todo[] = []
+const inicialToDo: Todo[] = []
 
 interface ToDoContextProviderProps {
     todos: Todo[],
@@ -10,15 +10,15 @@ interface ToDoContextProviderProps {
 
 export const ToDoContext = createContext<ToDoContextProviderProps>({
     todos: [],
-    setTodos: () => {}
+    setTodos: () => { }
 })
 
-export function ToDoContextProvider({children}:any) {
+export function ToDoContextProvider({ children }: any) {
     const [todos, setTodos] = useState<Todo[]>([])
 
     return (
-        <ToDoContext.Provider value={{todos, setTodos}}>
-        {children}
+        <ToDoContext.Provider value={{ todos, setTodos }}>
+            {children}
         </ToDoContext.Provider>
     )
 }

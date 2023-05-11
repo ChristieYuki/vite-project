@@ -4,7 +4,6 @@ import { List } from "../../components/List";
 import { ToDoContextProvider } from "../../context/ToDoContext";
 
 export function ToDoPage() {
-
     return (
         <ToDoContextProvider>
             <Header title={'My to do List'} />
