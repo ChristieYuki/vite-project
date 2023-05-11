@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
-import { Todo } from "../../App";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { List } from "../../components/List";
