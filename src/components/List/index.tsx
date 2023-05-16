@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ToDoContext } from '../../context/toDoContext'
+import { ToDoContext } from '../../context/ToDoContext'
 
 export function List() {
 

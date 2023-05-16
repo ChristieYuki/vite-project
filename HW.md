@@ -1,4 +1,4 @@
-- 11/05 - botão de back, utilizar o material ui para customizar todas as páginas, contendo um card em volta de tudo, header, um divisor entre o header e o resto, manter o padrão entre os componentes
+- 11/05 - botão de back, utilizar o ~~MaterialUI~~ **RadixUI** para customizar todas as páginas, contendo um card em volta de tudo, header, um divisor entre o header e o resto, manter o padrão entre os componentes
 
 - 04/05 - fazer context para as páginas que ainda não tiverem
 

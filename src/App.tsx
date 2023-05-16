@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter} from 'react-router-dom'
 import { Router } from './Router'
-import { ToDoContextProvider } from './context/toDoContext'
+import { ToDoContextProvider } from './context/ToDoContext'
 
 export type Todo = {
   description: string
