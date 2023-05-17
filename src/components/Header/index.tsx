@@ -1,13 +1,9 @@
-import { BackButton } from "../BackButton"
-
+import { CardHeader } from "@mui/material"
 interface HeaderProps {
   title: string
 }
 export function Header({ title }: HeaderProps) {
   return (
-    <>
-      <BackButton />
-      <h2>{title}</h2>
-    </>
+    <CardHeader title={title} />
   )
 }

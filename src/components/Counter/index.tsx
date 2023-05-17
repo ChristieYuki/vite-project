@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CounterContext } from "../../context/CounterContext"
+import { Button } from "@mui/material";
 
 export function Counter() {
     const { contador, setContador } = useContext(CounterContext)
@@ -10,8 +11,7 @@ export function Counter() {
     }
     return (
         <>
-            <button onClick={() => contar()}>+</button>
-            <p>contador é igual a {contador}</p>
+            <Button onClick={() => contar()} variant="contained" size="large">+</Button>
         </>
     )
 }

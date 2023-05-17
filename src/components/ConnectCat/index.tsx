@@ -1,5 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { ConnectCatContext } from '../../context/ConnectCatContext'
+import Grid from '@mui/material/Unstable_Grid2';
+import { Button } from '@mui/material';
 
 
 export function ConnectCat() {
@@ -22,15 +24,17 @@ export function ConnectCat() {
 
   return (
     <>
-      <button onClick={handleShowCat} style={{ marginBottom: '10px' }}>
+      <Button onClick={handleShowCat} style={{ marginBottom: '10px', justifyContent: 'space-between' }} variant="contained" size="small" color="secondary">
         Mostrar novo gatinho
-      </button>
-      <img
-        src={catImage.url}
-        height="220px"
-        width="220px"
-        style={{ display: 'flex', alignSelf: 'center' }}
-      />
+      </Button>
+      <Grid xs display="flex" justifyContent="center" alignItems="center">
+        <img
+          src={catImage.url}
+          height="220px"
+          width="220px"
+          style={{ display: 'flex', alignSelf: 'center' }}
+        />
+      </Grid>
     </>
   )
 }
