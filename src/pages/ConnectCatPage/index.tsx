@@ -1,8 +1,9 @@
-import { ConnectCat } from "../../components/ConnectCat";
 import { Header } from "../../components/Header";
-import { ConnectCatContextProvider } from "../../context/ConnectCatContext";
+import { ConnectCat } from "../../components/ConnectCat";
+import { ConnectCatContextProvider } from "../../context/ConnectCatContext"
 
 export function ConnectCatPage() {
+
   return (
     <ConnectCatContextProvider>
       <Header title={'Cat API'} />

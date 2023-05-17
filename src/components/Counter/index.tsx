@@ -1,11 +1,9 @@
-import { useContext } from 'react'
-import { CounterContext } from '../../context/CounterContext';
-interface CounterProps {
-    contador: number,
-    setContador: (contador: number) => void
-}
+import { useContext } from "react";
+import { CounterContext } from "../../context/CounterContext"
+
 export function Counter() {
     const { contador, setContador } = useContext(CounterContext)
+
     function contar() {
         setContador(contador + 1);
         console.log(contador);

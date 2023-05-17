@@ -1,10 +1,11 @@
 import { createContext, useState } from 'react'
 
-interface CounterContextProviderProps {
+interface CounterPageProviderProps {
     contador: number,
     setContador: (contador: number) => void
 }
-export const CounterContext = createContext<CounterContextProviderProps>({
+
+export const CounterContext = createContext<CounterPageProviderProps>({
     contador: 0,
     setContador: () => { }
 })

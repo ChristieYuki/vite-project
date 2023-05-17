@@ -1,12 +1,13 @@
 import { createContext, useState } from 'react'
 
-interface ConnectCatContextProviderProps {
+interface ConnectCatPageProviderProps {
     catContador: number
     setCatContador: (catContador: number) => void
     catImage: {}
     setCatImage: (catImage: {}) => void
 }
-export const ConnectCatContext = createContext<ConnectCatContextProviderProps>({
+
+export const ConnectCatContext = createContext<ConnectCatPageProviderProps>({
     catContador: 0,
     setCatContador: () => { },
     catImage: {},
