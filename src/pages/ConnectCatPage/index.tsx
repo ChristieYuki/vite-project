@@ -1,23 +1,15 @@
 import { ConnectCat } from "../../components/ConnectCat";
 import { Header } from "../../components/Header";
+import { ConnectCatContextProvider } from "../../context/ConnectCatContext";
+import { Paper } from "@mui/material";
 
-interface ConnectCatPageProps {
-   catContador: number
-   setCatContador:(catContador:number) => void
-   catImage: {}
-   setCatImage: (catImage: {}) => void
-
-}
-export function ConnectCatPage({catContador, setCatContador, catImage, setCatImage}:ConnectCatPageProps) {
+export function ConnectCatPage() {
     return(
-        <>
-        <Header title={'Cat API'} />
-        <ConnectCat
-          catContador={catContador}
-          setCatContador={setCatContador}
-          catImage={catImage}
-          setCatImage={setCatImage}
-        />
-        </>
+        <ConnectCatContextProvider>
+          <Paper elevation={8} sx={{height:"500px", width:"500px", borderRadius: "8px"}}>
+          <Header title={'Cat API'}/>
+          <ConnectCat />
+          </Paper>
+        </ConnectCatContextProvider>
     )
 }

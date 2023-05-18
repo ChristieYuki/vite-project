@@ -1,11 +1,12 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
-import { Todo } from '../../App'
+import { useContext } from 'react'
+import { TodoContext } from '../../context/TodoContext'
+import { CardList, Button, StyledCheckbox } from './stlyles'
+import { Card } from '@mui/material'
 
-interface ListProps {
-  todos: Todo[]
-  setTodos: Dispatch<SetStateAction<Todo[]>>
-}
-export function List({ todos, setTodos }: ListProps) {
+export function List() {
+
+  const {todos, setTodos} = useContext(TodoContext)
+
   const handleDelete2 = (id: string) => {
     const newTodo = todos.filter((todo) => {
       return todo.id !== id
@@ -13,6 +14,7 @@ export function List({ todos, setTodos }: ListProps) {
     setTodos(newTodo)
     console.log('check')
   }
+  
   function handleCheckbox(id: string){
     const newTodo = todos.map(todo => {
       if (todo.id === id){
@@ -34,21 +36,14 @@ export function List({ todos, setTodos }: ListProps) {
       ) : (
         todos.map((todo) => {
           return (
-            <div
-              key={todo.id}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
+            <Card key={todo.id}>
+              <StyledCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>
               <span>{todo.createdAt}</span>
-              <button onClick={() => handleDelete2(todo.id)}>-</button>
-            </div>
+              <Button onClick={() => handleDelete2(todo.id)}>-</Button>
+            </Card>
           )
         })
       )}
