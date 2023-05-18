@@ -3,6 +3,7 @@ import { ToDoContext } from '../../context/ToDoContext'
 import { TrashIcon } from '@radix-ui/react-icons';
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { StyledIndicator, StyledRoot } from './styles';
+import { CustomCheckbox } from '../CustomCheckbox';
 
 export function List() {
 
@@ -44,11 +45,7 @@ export function List() {
               }}
             >
               <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
-              <StyledRoot onChange={() => handleCheckbox(todo.id)} checked={todo.isChecked} value={todo.id}>
-                <StyledIndicator>
-                  <TrashIcon />
-                </StyledIndicator>
-              </StyledRoot>
+              <CustomCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>

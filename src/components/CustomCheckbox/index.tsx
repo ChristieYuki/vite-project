@@ -1,14 +1,15 @@
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon } from '@radix-ui/react-icons';
+import { StyledIndicator, StyledRoot } from "./styles";
 
-export function CustomCheckbox({ handleCheckbox, todo }: any) {
+export function CustomCheckbox({ handleCheckbox, id, isChecked }: any) {
     return (
         <>
-            <Checkbox.Root onChange={() => handleCheckbox(todo.id)} checked={todo.isChecked} value={todo.id}>
-                <Checkbox.Indicator>
+            <StyledRoot onChange={() => handleCheckbox(id)} checked={isChecked} value={id}>
+                <StyledIndicator>
                     <CheckIcon />
-                </Checkbox.Indicator>
-            </Checkbox.Root>
+                </StyledIndicator>
+            </StyledRoot>
         </>
     )
 }
