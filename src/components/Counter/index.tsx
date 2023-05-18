@@ -10,8 +10,7 @@ export function Counter() {
     }
     return (
         <>
-            <button onClick={() => contar()}>+</button>
-            <p>contador é igual a {contador}</p>
+            <button onClick={() => contar()} className="margin-bottom-sm buttonCounter info">+</button>
         </>
     )
 }

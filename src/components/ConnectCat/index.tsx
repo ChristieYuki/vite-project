@@ -21,7 +21,7 @@ export function ConnectCat() {
 
   return (
     <>
-      <button onClick={handleShowCat} style={{ marginBottom: '10px' }}>
+      <button onClick={handleShowCat} className="buttonCat info margin-bottom-sm" style={{ marginBottom: '10px' }}>
         Mostrar novo gatinho
       </button>
       <img

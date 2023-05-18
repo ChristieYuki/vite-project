@@ -36,9 +36,9 @@ export function Input() {
         type="text"
         onChange={handleTodoInput}
         value={todoInput}
-        style={{ borderRadius: '4px', padding: '3px', marginTop: '-25px', marginRight: '10px', backgroundColor: 'transparent' }}
+        className='outline-none'
       />
-      <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ paddingTop: '2px', paddingRight: '7px', paddingLeft:'7px', paddingBottom:'4px' }}>
+      <button onClick={handleAddTodo} onSubmit={handleAddTodo} className='buttonPlus success'>
         +
       </button>
     </>

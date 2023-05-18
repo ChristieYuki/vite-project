@@ -1,18 +1,18 @@
 import { Content } from '../../components/Content';
 import { Counter } from '../../components/Counter';
-import { MyPaper } from '../../components/MyPaper';
+import { Paper } from '../../components/Paper';
 import { CounterContextProvider } from '../../context/CounterContext';
 import { Link } from "react-router-dom";
 
 export function CounterPage() {
 
     return (
-        <MyPaper>
+        <Paper>
         <CounterContextProvider>
             <Content />
             <Counter />
         </CounterContextProvider>
-        <Link to='/'>Return to home</Link>
-        </MyPaper>
+        <Link className='returnHome display-block' to='/'>Return to home</Link>
+        </Paper>
     )
 }

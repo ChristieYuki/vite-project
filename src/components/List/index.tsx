@@ -26,7 +26,7 @@ export function List() {
   }
 
   return (
-    <>
+    <div className='margin-top-sm'>
       {todos.length === 0 ? (
         <h3>Vamos fazer algo hoje?</h3> // checar se o array é vazio
       ) : (
@@ -39,17 +39,18 @@ export function List() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}
+              className='margin-bottom-sm'
             >
               <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
-              <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
+              <span className={todo.isChecked ? 'Completed margin-right-sm' : 'Incompleted margin-right-sm'}>
                 {todo.description}
               </span>
-              <span>{todo.createdAt}</span>
-              <button onClick={() => handleDelete2(todo.id)}>-</button>
+              <span className='margin-right-sm'>{todo.createdAt}</span>
+              <button onClick={() => handleDelete2(todo.id)} className='buttonMinus alert'>-</button>
             </div>
           )
         })
       )}
-    </>
+    </div>
   )
 }

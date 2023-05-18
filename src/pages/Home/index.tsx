@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { MyPaper } from "../../components/MyPaper";
+import { Paper } from "../../components/Paper";
 
 export function Home() {
     return(
-        <MyPaper>
+        <Paper>
         <h1>Home</h1>
         <ul>
             <li>
@@ -16,6 +16,6 @@ export function Home() {
                 <Link to='/to-do'>To Do List</Link>
             </li>
         </ul>
-        </MyPaper>
+        </Paper>
     )
 }
