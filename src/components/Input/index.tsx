@@ -1,8 +1,6 @@
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
 import { ToDoContext } from '../../context/toDoContext'
-import { TextField } from "@mui/material"
-import { CustomTextField } from "./styles"
 
 export function Input() {
   const {todos, setTodos} = useContext(ToDoContext)
@@ -32,17 +30,15 @@ export function Input() {
   }
 
   return (
-    <div>
-      <CustomTextField
-        color={'success'}
+    <>
+      <input
         onChange={handleTodoInput}
         value={todoInput}
         placeholder='Entre com o TODO'
-        variant="standard"
-      />
+       />
       <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
         +
       </button>
-    </div>
+    </>
   )
 }
