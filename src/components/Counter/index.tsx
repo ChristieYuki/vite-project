@@ -1,9 +1,6 @@
 import { useContext } from 'react'
 import { CounterContext } from '../../context/CounterContext';
-interface CounterProps {
-    contador: number,
-    setContador: (contador: number) => void
-}
+
 export function Counter() {
     const { contador, setContador } = useContext(CounterContext)
     function contar() {
@@ -12,8 +9,8 @@ export function Counter() {
     }
     return (
         <>
-            <button onClick={() => contar()}>+</button>
-            <p>contador é igual a {contador}</p>
+            <button onClick={() => contar()} style={{ background: 'black', borderRadius: '100px', border: '1px solid cyan', color: 'cyan', }}>+</button>
+            <p style={{ color: 'darkblue', fontWeight: '850', fontFamily: 'fantasy', fontSize: '30px' }}>Result : {contador} </p>
         </>
     )
 }
