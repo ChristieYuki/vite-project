@@ -1,12 +1,12 @@
 import { Content } from "../../components/Content"
-import { Counter } from "../../components/Counter"
+import { ButtonHome } from "../../components/CustomButton"
 import { CounterContextProvider } from "../../context/CounterContext"
 
 export function CounterPage() {
     return (
         <CounterContextProvider>
             <Content />
-            <Counter />
+            <ButtonHome children='home' />
         </CounterContextProvider>
     )
 }
