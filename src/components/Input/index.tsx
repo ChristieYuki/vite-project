@@ -1,9 +1,9 @@
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
-import { ToDoContext } from '../../context/toDoContext'
+import { TodoContext } from '../../context/TodoContext'
 
 export function Input() {
-  const {todos, setTodos} = useContext(ToDoContext)
+  const {todos, setTodos} = useContext(TodoContext)
 
   const [todoInput, setTodoInput] = useState('')
 
@@ -31,11 +31,11 @@ export function Input() {
 
   return (
     <>
-      <CustomTextField
+      <input
         onChange={handleTodoInput}
         value={todoInput}
         placeholder='Entre com o TODO'
-      />
+       />
       <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
         +
       </button>

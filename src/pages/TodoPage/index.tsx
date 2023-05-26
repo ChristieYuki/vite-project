@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { List } from "../../components/List";
@@ -10,6 +11,9 @@ export function TodoPage() {
             <Header title={'My to do list'}/>
             <Input />
             <List />
+            <Link to='/'>
+                <button>Back</button>
+            </Link>
         </TodoContextProvider>
     )
 }

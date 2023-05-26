@@ -33,14 +33,21 @@ export function List() {
       ) : (
         todos.map((todo) => {
           return (
-            <Card key={todo.id}>
-              <StyledCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id}/>
+            <div
+              key={todo.id}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>
               <span>{todo.createdAt}</span>
-              <Button onClick={() => handleDelete2(todo.id)}>-</Button>
-            </Card>
+              <button onClick={() => handleDelete2(todo.id)}>-</button>
+            </div>
           )
         })
       )}
