@@ -1,13 +1,13 @@
-import { Content } from "../../components/Content"
-import { Counter } from "../../components/Counter"
-import { CounterContextProvider } from "../../context/CounterContext"
+import { Content } from '../../components/Content';
+import { Counter } from '../../components/Counter';
+import { CounterContextProvider } from '../../context/CounterContext';
 
+export function CounterPage() {
 
-export function CounterPage(){
-    return(
-<CounterContextProvider>
-    <Content />
-    <Counter />
-</CounterContextProvider>
+    return (
+        <CounterContextProvider>
+            <Content />
+            <Counter />
+        </CounterContextProvider>
     )
 }

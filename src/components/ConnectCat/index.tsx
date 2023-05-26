@@ -1,9 +1,8 @@
-import { useContext, useEffect } from 'react'
-import { ConnectCatContext } from '../../context/ConnectCatContext'
-
+import { useEffect, useContext } from "react"
+import { ConnectCatContext } from "../../context/ConnectCatContext"
 
 export function ConnectCat() {
-  const {catContador, setCatContador, catImage, setCatImage} = useContext(ConnectCatContext)
+  const { catContador, setCatContador, catImage, setCatImage } = useContext(ConnectCatContext)
 
   useEffect(() => {
     const fetchCatImage = async () => {

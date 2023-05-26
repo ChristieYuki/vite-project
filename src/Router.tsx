@@ -1,8 +1,9 @@
-import {Route, Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { ConnectCatPage } from "./pages/ConnectCatPage"
 import { CounterPage } from "./pages/CounterPage"
-import { TodoPage } from "./pages/TodoPage"
+import { ToDoPage } from "./pages/ToDoPage"
+
 
 export function Router() {
     return(
@@ -10,7 +11,7 @@ export function Router() {
             <Route path="/" element={ <Home/> }/>
             <Route path="/connect-cat" element={ <ConnectCatPage /> }/>
             <Route path="/contador" element={ <CounterPage /> }/>
-            <Route path="/to-do" element={ <TodoPage /> } />
+            <Route path="/to-do" element={ <ToDoPage /> } />
         </Routes>
     )
     }

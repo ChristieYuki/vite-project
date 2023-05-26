@@ -1,10 +1,9 @@
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
-import { TodoContext } from '../../context/TodoContext'
-import { CustomTextField } from './styles'
+import { ToDoContext } from '../../context/toDoContext'
 
 export function Input() {
-  const {todos, setTodos} = useContext(TodoContext)
+  const {todos, setTodos} = useContext(ToDoContext)
 
   const [todoInput, setTodoInput] = useState('')
 
@@ -12,7 +11,7 @@ export function Input() {
     setTodoInput(event.target.value)
     console.log(event.target.value)
   }
-
+  
   function handleAddTodo() {
     const newTodo: Todo = {
       description: todoInput,

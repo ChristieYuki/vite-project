@@ -1,12 +1,9 @@
 import { useContext } from 'react'
 import { TodoContext } from '../../context/TodoContext'
-import { CardList, Button, StyledCheckbox } from './stlyles'
-import { Card } from '@mui/material'
 
 export function List() {
 
   const {todos, setTodos} = useContext(TodoContext)
-
   const handleDelete2 = (id: string) => {
     const newTodo = todos.filter((todo) => {
       return todo.id !== id
