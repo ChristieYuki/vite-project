@@ -1,8 +1,5 @@
 import { useContext } from 'react'
 import { ToDoContext } from '../../context/ToDoContext'
-import { TrashIcon } from '@radix-ui/react-icons';
-import * as Checkbox from '@radix-ui/react-checkbox'
-import { StyledIndicator, StyledRoot } from './styles';
 import { CustomCheckbox } from '../CustomCheckbox';
 
 export function List() {
@@ -44,7 +41,7 @@ export function List() {
                 alignItems: 'center',
               }}
             >
-              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
+              {/* <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} /> */}
               <CustomCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
