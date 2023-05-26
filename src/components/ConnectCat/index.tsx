@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { ConnectCatContext } from '../../context/ConnectCatContext'
-
+import { ButtonText, CatImg } from './styles';
 
 interface CatProps {
   catContador: number
@@ -28,14 +28,13 @@ export function ConnectCat() {
 
   return (
     <>
-      <button onClick={handleShowCat} style={{ marginBottom: '10px' }}>
+      <ButtonText onClick={handleShowCat}>
         Mostrar novo gatinho
-      </button>
-      <img
+      </ButtonText>
+      <CatImg
         src={catImage.url}
         height="220px"
         width="220px"
-        style={{ display: 'flex', alignSelf: 'center' }}
       />
     </>
   )
