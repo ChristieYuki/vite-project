@@ -1,27 +1,28 @@
-import {styled, keyframes} from "@stitches/react";
+import { blackA, violet } from "@radix-ui/colors";
 import * as Tooltip from '@radix-ui/react-tooltip';
+import { keyframes, styled } from "@stitches/react";
 
 const slideUpAndFade = keyframes({
     '0%': { opacity: 0, transform: 'translateY(2px)' },
     '100%': { opacity: 1, transform: 'translateY(0)' },
-  });
+});
   
-  const slideRightAndFade = keyframes({
+const slideRightAndFade = keyframes({
     '0%': { opacity: 0, transform: 'translateX(-2px)' },
     '100%': { opacity: 1, transform: 'translateX(0)' },
-  });
+});
   
-  const slideDownAndFade = keyframes({
+const slideDownAndFade = keyframes({
     '0%': { opacity: 0, transform: 'translateY(-2px)' },
     '100%': { opacity: 1, transform: 'translateY(0)' },
-  });
+});
   
-  const slideLeftAndFade = keyframes({
+const slideLeftAndFade = keyframes({
     '0%': { opacity: 0, transform: 'translateX(2px)' },
     '100%': { opacity: 1, transform: 'translateX(0)' },
-  });
-
-const TooltipContent = styled(Tooltip.Content, {
+});
+  
+export const TooltipContent = styled(Tooltip.Content, {
     borderRadius: 4,
     padding: '10px 15px',
     fontSize: 15,
@@ -39,13 +40,13 @@ const TooltipContent = styled(Tooltip.Content, {
       '&[data-side="bottom"]': { animationName: slideUpAndFade },
       '&[data-side="left"]': { animationName: slideRightAndFade },
     },
-  });
+});
   
-  const TooltipArrow = styled(Tooltip.Arrow, {
+export const TooltipArrow = styled(Tooltip.Arrow, {
     fill: 'white',
-  });
-  
-  const IconButton = styled('button', {
+});
+
+export const IconButton = styled('button', {
     all: 'unset',
     fontFamily: 'inherit',
     borderRadius: '100%',
@@ -57,6 +58,11 @@ const TooltipContent = styled(Tooltip.Content, {
     color: violet.violet11,
     backgroundColor: 'white',
     boxShadow: `0 2px 10px ${blackA.blackA7}`,
-    '&:hover': { backgroundColor: violet.violet3 },
-    '&:focus': { boxShadow: `0 0 0 2px black` },
+    marginLeft: '0.8rem',
+    '&:hover': { 
+        backgroundColor: violet.violet3 
+    },
+    '&:focus': { 
+        boxShadow: `0 0 0 2px black` 
+    },
   });

@@ -1,10 +1,9 @@
 import { useContext } from 'react';
-import { ToDoContext } from '../../context/toDoContext';
+import { ToDoContext } from '../../context/ToDoContext';
 import { TrashIcon } from '@radix-ui/react-icons';
-import * as Checkbox from '@radix-ui/react-checkbox'
-import { StyledIndicator, StyledRoot } from './../CustomCheckbox/styles';
 import { CustomCheckbox } from '../CustomCheckbox';
-import TooltipDemo from '../CustomTooltip';
+import CustomTooltip from '../CustomTooltip';
+import { violet } from '@radix-ui/colors';
 
 export function List() {
 
@@ -33,7 +32,7 @@ export function List() {
   return (
     <>
       {todos.length === 0 ? (
-        <h3>Vamos fazer algo hoje?</h3> // checar se o array é vazio
+        <h3 style={{color: `${violet.violet9}`}}>Vamos fazer algo hoje?</h3> // checar se o array é vazio
       ) : (
         todos.map((todo) => {
           return (
@@ -43,16 +42,20 @@ export function List() {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                marginBottom: '5px'
               }}
             >
-              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
               <CustomCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
-              <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
+              <span className={todo.isChecked ? 'Completed' : 'Incompleted'} style={{marginLeft: '8px', color: `${violet.violet11}`}}>
                 {todo.description}
               </span>
-              <span>{todo.createdAt}</span>
-              <TooltipDemo></TooltipDemo>
-              <button onClick={() => handleDelete2(todo.id)}>-</button>
+              <span style={{marginLeft: '8px', color: `${violet.violet11}`}}>{todo.createdAt}</span>
+              <CustomTooltip 
+                onClick={() => handleDelete2(todo.id)} 
+                childrenButton={<TrashIcon />} 
+                childrenContent='Remover este TODO!'
+                side='right'
+              />
             </div>
           )
         })

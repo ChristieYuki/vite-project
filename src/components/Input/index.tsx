@@ -1,6 +1,9 @@
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
-import { ToDoContext } from '../../context/toDoContext'
+import { ToDoContext } from '../../context/ToDoContext'
+import { PlusIcon } from '@radix-ui/react-icons'
+import CustomTooltip from '../CustomTooltip'
+import CustomInput from '../CustomInput'
 
 export function Input() {
   const {todos, setTodos} = useContext(ToDoContext)
@@ -22,6 +25,7 @@ export function Input() {
     if(todoInput.trim() !== ""){
       setTodos([...todos, newTodo])
       setTodoInput('')
+      return
     }else{
       setTodoInput('')
       alert('Escreva algo, arrombado!')
@@ -31,14 +35,18 @@ export function Input() {
 
   return (
     <>
-      <input
-        onChange={handleTodoInput}
-        value={todoInput}
+      <CustomInput 
+        onChange={handleTodoInput} 
+        value={todoInput} 
         placeholder='Entre com o TODO'
-       />
-      <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
-        +
-      </button>
+      />
+      <CustomTooltip 
+        onClick={handleAddTodo} 
+        childrenButton={<PlusIcon />} 
+        childrenContent='Adicionar o TODO!' 
+        onSubmit={handleAddTodo}
+      />
+      <div style={{marginBottom: '7px'}}></div>
     </>
   )
 }

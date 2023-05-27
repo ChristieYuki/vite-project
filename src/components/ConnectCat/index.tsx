@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react"
 import { ConnectCatContext } from "../../context/ConnectCatContext"
+import { blackA, violet } from "@radix-ui/colors"
 
 export function ConnectCat() {
   const { catContador, setCatContador, catImage, setCatImage } = useContext(ConnectCatContext)
@@ -21,7 +22,7 @@ export function ConnectCat() {
 
   return (
     <>
-      <button onClick={handleShowCat} style={{ marginBottom: '10px' }}>
+      <button onClick={handleShowCat} style={{ marginBottom: '10px', color: `${violet.violet9}`, boxShadow: `0 2px 10px ${blackA.blackA9}` }}>
         Mostrar novo gatinho
       </button>
       <img
