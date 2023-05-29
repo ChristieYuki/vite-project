@@ -3,7 +3,11 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color:rgb(33, 36, 35);
+  border: 5px solid turquoise;
+  border-radius: 20px;
 }
+
 
 .logo {
   height: 6em;
