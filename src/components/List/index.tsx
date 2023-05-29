@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { ToDoContext } from '../../context/ToDoContext'
 import { CustomCheckbox } from '../CustomCheckbox';
+import { StyledButton } from './styles';
 
 export function List() {
 
@@ -47,7 +48,7 @@ export function List() {
                 {todo.description}
               </span>
               <span>{todo.createdAt}</span>
-              <button onClick={() => handleDelete2(todo.id)}>-</button>
+              <StyledButton onClick={() => handleDelete2(todo.id)}>-</StyledButton>
             </div>
           )
         })

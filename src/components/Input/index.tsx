@@ -1,3 +1,4 @@
+import { StyledInput, StyledButton } from './styles';
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
 import { ToDoContext } from '../../context/ToDoContext'
@@ -31,15 +32,15 @@ export function Input() {
 
   return (
     <>
-      <input
+      <StyledInput type="text"
+        required
         alt="onChange"
-        type="text"
         onChange={handleTodoInput}
         value={todoInput}
       />
-      <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
+      <StyledButton style={{ marginTop: 10 }} onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
         +
-      </button>
+      </StyledButton>
     </>
   )
 }

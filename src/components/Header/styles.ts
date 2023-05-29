@@ -1,3 +1,4 @@
+import * as Separator from '@radix-ui/react-separator';
 import {styled} from "@stitches/react";
 export const HeaderText = styled('h1', {
     color: 'Violet',

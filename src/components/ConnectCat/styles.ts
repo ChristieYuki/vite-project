@@ -16,5 +16,6 @@ export const ButtonText = styled('button', {
 export const CatImg = styled('img', {
     display: 'flex',
     alignSelf: 'center',
-    borderRadius: '50px'
+    borderRadius: '50px',
+    margin: '10px',
 })

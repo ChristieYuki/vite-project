@@ -11,7 +11,7 @@ export const StyledRoot = styled(Checkbox.Root, {
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    backgroundColor:'DarkGray',
+    backgroundColor: 'black',
     '&:hover':{
         borderColor:'Cyan',
     },    

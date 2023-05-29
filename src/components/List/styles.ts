@@ -1,14 +1,16 @@
 import { styled } from "@stitches/react";
-
 export const StyledButton = styled('button',{
     borderRadius: '20%',
-    padding:'10px',
+    fontWeight:'bold',
+    fontSize:'large',
+    padding:'4px 8px 4px 8px',
     display: 'inline-flex',
     alignItems: 'center',
     justifyCntent: 'center',
-    color: 'white',
-    backgroundColor: 'Black',
+    color: 'black',
+    backgroundColor: 'white',
     margin:'10px',
+    border: '2px solid black',
     '&:hover':{
         backgroundColor:'black',
         borderColor:'Cyan',

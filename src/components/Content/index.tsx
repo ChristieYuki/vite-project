@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
-import { CounterContext } from '../../context/CounterContext'
 import { Counter } from "../Counter";
+import { StyledH2 } from "./styles";
 
 export function Content() {
   return (
     <>
-      <h2 style={{ fontFamily: 'fantasy', fontWeight: '600', color: 'darkblue', fontSize: '25px' }}>Add in Counter</h2>
+      <StyledH2>Click and add to Counter</StyledH2>
       <Counter />
     </>
   )
