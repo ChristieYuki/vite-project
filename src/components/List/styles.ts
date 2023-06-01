@@ -1,19 +1,29 @@
 import { styled } from "@stitches/react";
 export const StyledButton = styled('button',{
-    borderRadius: '20%',
+    borderRadius: '50%',
+    height: '30px',
+    width: '30px',
     fontWeight:'bold',
     fontSize:'large',
     padding:'4px 8px 4px 8px',
     display: 'inline-flex',
     alignItems: 'center',
-    justifyCntent: 'center',
-    color: 'black',
-    backgroundColor: 'white',
+    justifyContent: 'center',
+    color: 'white',
+    backgroundColor: 'black',
+    borderColor:'gray',
     margin:'10px',
-    border: '2px solid black',
     '&:hover':{
-        backgroundColor:'black',
-        borderColor:'Cyan',
-        color: 'Cyan'
+        backgroundColor:'DarkViolet',
+        borderColor:'white',
+        color: 'white',
     }
 })
+
+export const StyledH3 = styled('h3', {
+color:'white',
+})
+
+export const StyledSpan = styled('span', {
+    color:'white',
+    })

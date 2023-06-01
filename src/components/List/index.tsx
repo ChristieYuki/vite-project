@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ToDoContext } from '../../context/ToDoContext'
 import { CustomCheckbox } from '../CustomCheckbox';
-import { StyledButton } from './styles';
+import { StyledButton, StyledH3, StyledSpan } from './styles';
 
 export function List() {
 
@@ -30,7 +30,7 @@ export function List() {
   return (
     <>
       {todos.length === 0 ? (
-        <h3>Vamos fazer algo hoje?</h3> // checar se o array é vazio
+        <StyledH3>Vamos fazer algo hoje?</StyledH3> // checar se o array é vazio
       ) : (
         todos.map((todo) => {
           return (
@@ -44,10 +44,10 @@ export function List() {
             >
               {/* <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} /> */}
               <CustomCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
-              <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
+              <StyledSpan className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
-              </span>
-              <span>{todo.createdAt}</span>
+              </StyledSpan>
+              <StyledSpan>{todo.createdAt}</StyledSpan>
               <StyledButton onClick={() => handleDelete2(todo.id)}>-</StyledButton>
             </div>
           )

@@ -1,13 +1,14 @@
 import { styled } from "@stitches/react";
 
 export const StyledButton = styled('button',{
-    padding:'5px 10px',
+    padding:'7px 19px',
     display: 'inline-flex',
     alignItems: 'center',
-    justifyCntent: 'center',
-    color: 'cyan',
-    backgroundColor: 'Black',
-    border: '1px solid cyan', 
+    justifyContent: 'center',
+    color: 'white',
+    fontSize: '35px',
+    fontWeight: '500',  
+    backgroundColor: 'DarkViolet',
     margin:'10px',
     borderRadius: '100px', 
     '&:hover':{
@@ -18,7 +19,7 @@ export const StyledButton = styled('button',{
 })
 
 export const StyledP = styled('p',{
-color: 'black', 
+color: 'violet', 
 fontWeight: '850', 
 fontSize: '30px',
 margin:'10px',

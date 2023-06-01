@@ -3,17 +3,17 @@ import { CheckIcon } from '@radix-ui/react-icons';
 import {styled} from "@stitches/react";
 
 export const StyledRoot = styled(Checkbox.Root, {
-    border: '1px solid Gray',
+    border: '2px solid Cyan',
     borderRadius:'50%',
-    height: '20px',
-    width: '20px',
-    fontSize: '0px',
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
+    height: '30px',
+    width: '30px',
+    fontSize: '10px',
     backgroundColor: 'black',
     '&:hover':{
-        borderColor:'Cyan',
+        background:'cyan',
     },    
     '&:focus':{
         outline:'0'
@@ -21,7 +21,10 @@ export const StyledRoot = styled(Checkbox.Root, {
 })
 
 export const StyledIndicator = styled(Checkbox.Indicator,{
-    color:'Cyan',
+    color:'white',
+    '&:focus':{
+        outline:'0'
+    },
 })
 
 export const StyledIcon = styled(CheckIcon,{

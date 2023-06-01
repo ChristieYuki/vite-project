@@ -1,4 +1,4 @@
-import { StyledRootHorizontal } from "../CustomSeparator/styles"
+import { CustomSeparatorHorizontal } from "../CustomSeparator"
 import { HeaderText } from "./styles"
 
 interface HeaderProps {
@@ -8,8 +8,7 @@ export function Header({ title }: HeaderProps) {
   return (
     <>
       <HeaderText>{title}</HeaderText>
-      <StyledRootHorizontal
-        style={{ margin: '15px 0' }} />
+      <CustomSeparatorHorizontal />
     </>
   )
 }

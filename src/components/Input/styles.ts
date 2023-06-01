@@ -3,17 +3,18 @@ import { styled } from '@stitches/react';
 
 export const StyledInput = styled('input',{
   all: 'unset',
+  color:'Beige',
   boxSizing: 'borderBox',
   padding: '0 10px',
   height: '35px',
   lineHeight: '1',
-  boxShadow:'0 0 0 1px gray',
+  boxShadow:'0 0 0 1px DarkViolet',
   borderRadius: '30px',
   '&:hover':{
-    boxShadow:'0 0 0 1px black',
+    boxShadow:'0 0 0 1px cyan',
   },
   '&:focus':{
-    boxShadow: '0 0 0 2px black',
+    boxShadow:' 0 0 0 2px cyan',
   },
   '&:selection':{
     backgroundColor: 'black',
@@ -27,18 +28,19 @@ export const StyledButton = styled('button',{
   display: 'inlineFlex',
   alignItems: 'center',
   justifyContent: 'center',
-  borderRadius: '4px',
-  padding: '0 15px',
+  borderRadius: '50%',
+  padding: '0 13px',
   margin:'10px',
-  fontSize: '16px',
+  fontSize: '20px',
   lineHeight: '1',
   fontWeight: '500',
   height: '35px',
-  backgroundColor: 'black',
+  backgroundColor: 'DarkViolet',
   color: 'white',
-  boxShadow: '0 2px 10px gray',
-'&:hover' : {
-  backgroundColor: 'LightGray',
+  '&:hover':{
+    backgroundColor:'black',
+    border:'1px solid Cyan',
+    color: 'Cyan',
 },
 '&:focus' : {
   boxShadow:' 0 0 0 2px cyan',
