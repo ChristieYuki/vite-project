@@ -1,9 +1,11 @@
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
-import { ToDoContext } from '../../context/toDoContext'
+import { TodoContext } from '../../context/TodoContext'
+import { CustomTooltip } from '../CustomTooltip'
+import { PlusIcon } from '@radix-ui/react-icons'
 
 export function Input() {
-  const {todos, setTodos} = useContext(ToDoContext)
+  const {todos, setTodos} = useContext(TodoContext)
 
   const [todoInput, setTodoInput] = useState('')
 
@@ -32,14 +34,11 @@ export function Input() {
   return (
     <>
       <input
-        alt="onChange"
-        type="text"
         onChange={handleTodoInput}
         value={todoInput}
-      />
-      <button onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
-        +
-      </button>
+        placeholder='Enter the TO DO here'
+       />
+      <CustomTooltip childrenButton={<PlusIcon/>} childrenContent="Add to list" tooltipClick={handleAddTodo} tooltipSubmit={handleAddTodo} side="right"></CustomTooltip>
     </>
   )
 }

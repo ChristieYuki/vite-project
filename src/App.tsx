@@ -16,45 +16,6 @@ function App() {
     <BrowserRouter>
     <Router/>
     </BrowserRouter>
-    // <div>
-    //   <div
-    //     style={{
-    //       display: 'flex',
-    //       margin: '10px',
-    //       border: 'solid',
-    //       padding: '30px',
-    //       flexDirection: 'column',
-    //     }}
-    //   >
-    //     <Content contador={contador} />
-    //     <Counter contador={contador} setContador={setContador} />
-    //   </div>
-
-    //   <div
-    //     style={{
-    //       display: 'flex',
-    //       margin: '10px',
-    //       border: 'solid',
-    //       padding: '30px',
-    //       flexDirection: 'column',
-    //     }}
-    //   >
-    //     //   </div>
-
-    //   <div
-    //     style={{
-    //       display: 'flex',
-    //       margin: '10px',
-    //       border: 'solid',
-    //       padding: '30px',
-    //       flexDirection: 'column',
-    //     }}
-    //   >
-    //     <Header title={'My to do List'} />
-    //     <Input todos={todos} setTodos={setTodos} />
-    //     <List todos={todos} setTodos={setTodos} />
-    //   </div>
-    // </div>
   )
 }
 
