@@ -1,5 +1,8 @@
 import { useContext } from 'react'
 import { TodoContext } from '../../context/TodoContext'
+import { CustomCheckbox } from '../CustomCheckbox '
+import { CustomTooltip } from '../CustomTooltip'
+import { TrashIcon } from '@radix-ui/react-icons'
 
 export function List() {
 
@@ -29,7 +32,7 @@ export function List() {
   return (
     <>
       {todos.length === 0 ? (
-        <h3>Vamos fazer algo hoje?</h3> // checar se o array é vazio
+        <h3>Let's do somethig today</h3> // checar se o array é vazio
       ) : (
         todos.map((todo) => {
           return (
@@ -41,12 +44,12 @@ export function List() {
                 alignItems: 'center',
               }}
             >
-              <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
+              <CustomCheckbox checked={todo.isChecked} onChange={() => handleCheckbox(todo.id)} value={todo.id} />
               <span className={todo.isChecked ? 'Completed' : 'Incompleted'}>
                 {todo.description}
               </span>
               <span>{todo.createdAt}</span>
-              <button onClick={() => handleDelete2(todo.id)}>-</button>
+              <CustomTooltip childrenButton={<TrashIcon/>} childrenContent="Delete" tooltipClick={() => handleDelete2(todo.id)} side="right"></CustomTooltip>
             </div>
           )
         })
