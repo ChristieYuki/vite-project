@@ -2,11 +2,14 @@ import { StyledInput, StyledButton } from './styles';
 import { ChangeEvent, useState, useContext } from 'react'
 import { Todo } from '../../App'
 import { ToDoContext } from '../../context/ToDoContext'
+import { format } from 'date-fns';
+
 
 export function Input() {
   const { todos, setTodos } = useContext(ToDoContext)
-
   const [todoInput, setTodoInput] = useState('')
+  const today = new Date();
+  const formattedDate = format(today, 'dd.MM.yy');
 
   function handleTodoInput(event: ChangeEvent<HTMLInputElement>) {
     setTodoInput(event.target.value)
@@ -17,7 +20,7 @@ export function Input() {
     const newTodo: Todo = {
       description: todoInput,
       id: Math.random().toString(),
-      createdAt: new Date().toDateString(),
+      createdAt: formattedDate,
       isChecked: false,
     }
     if (todoInput.trim() !== "") {
@@ -30,6 +33,7 @@ export function Input() {
     }
   }
 
+
   return (
     <>
       <StyledInput type="text"
@@ -38,7 +42,7 @@ export function Input() {
         onChange={handleTodoInput}
         value={todoInput}
       />
-      <StyledButton style={{ marginTop: 10 }} onClick={handleAddTodo} onSubmit={handleAddTodo} style={{ marginTop: '10px' }}>
+      <StyledButton style={{ marginTop: 10 }} onClick={handleAddTodo} onSubmit={handleAddTodo} >
         +
       </StyledButton>
     </>

@@ -2,4 +2,8 @@
 
 -fazer context para as páginas que ainda não tiverem
 
-- colocar o que tem de componente em radix.. se der
+- 16/06 - transformar: 
+            A linha de checklist de 'span' para row de tabela; https://www.w3schools.com/html/html_tables.asp 
+            Data do checklist.. passar como uma string mais amigavel "createdAt" - date-fns
+
+- 26/05 - usar o radix e construir outra app
